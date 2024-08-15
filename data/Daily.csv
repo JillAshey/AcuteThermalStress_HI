@@ -1,0 +1,289 @@
+﻿Date,Timepoint,Time,Calib.Date,Tank,Treatment,LifeStage,Temp_C,pH.MV,Salinity_ppt,Light_PAR,Conditions,Notes
+20220618,6/18/22,13:05,20220618,Squarical1,High,Larval,NA,-73.5,36.92,380,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical2,High,Larval,NA,-73.4,36.89,420,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical3,High,Larval,NA,-73.4,36.88,369,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical4,High,Larval,NA,73.5,36.84,352,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical5,High,Larval,NA,-73.6,36.82,378,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical6,High,Larval,NA,-73.6,36.83,335,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical7,Ambient,Larval,NA,-74,36.87,395,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical8,Ambient,Larval,NA,-74.1,36.84,335,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical9,Ambient,Larval,NA,-71,36.88,315,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical10,Ambient,Larval,NA,-73.8,36.92,388,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical11,Ambient,Larval,NA,-73,36.94,360,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Squarical12,Ambient,Larval,NA,-74.1,36.91,399,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Ambient_Header,Ambient,Larval,NA,-74.2,36.88,NA,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Amb_Tank1,Ambient,Larval,NA,-76.1,36.97,540,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,Amb_Tank2,Ambient,Larval,NA,-76.3,36.95,245,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,High_Header,High,Larval,NA,-73.5,36.95,NA,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,High_Tank1,High,Larval,NA,-77.1,36.99,389,Slightly cloudy,No temperature probes available for measurements
+20220618,6/18/22,13:05,20220618,High_Tank2,High,Larval,NA,-75.3,36.77,360,Slightly cloudy,No temperature probes available for measurements
+20220619,6/19/22,8:30,20220618,Squarical1,High,Larval,30.3,-72.3,37.06,21,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical2,High,Larval,30.2,-73,36.99,16,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical3,High,Larval,30.2,-72.5,37.02,28,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical4,High,Larval,30.2,-72.6,36.99,23,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical5,High,Larval,30.2,-72.6,36.96,25,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical6,High,Larval,30.2,-72.6,36.98,13,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical7,Ambient,Larval,27.2,-73.3,37.02,35,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical8,Ambient,Larval,27.2,-73.5,36.95,37,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical9,Ambient,Larval,27.1,-73.5,36.97,33,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical10,Ambient,Larval,26.9,-73.3,36.95,21,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical11,Ambient,Larval,26.9,-72.2,36.98,25,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Squarical12,Ambient,Larval,27.1,-73.3,37.94,12,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Ambient_Header,Ambient,Larval,27.2,-73.4,36.96,NA,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Amb_Tank1,Ambient,Larval,26.3,-74,36.91,28,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,Amb_Tank2,Ambient,Larval,26.6,-73.8,36.94,30,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,High_Header,High,Larval,30.5,-73.2,36.98,NA,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,High_Tank1,High,Larval,30.6,-74,36.99,23,Slightly cloudy,NA
+20220619,6/19/22,8:30,20220618,High_Tank2,High,Larval,30.3,-73.4,37.05,15,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical1,High,Larval,30.8,-73.5,37.19,150,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical2,High,Larval,30.2,-73.2,37.16,177.3,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical3,High,Larval,30.8,-73.5,37.14,136,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical4,High,Larval,30.9,-73.7,37.2,90,Slightly cloudy,Pacuta larvae in squarical 
+20220620,6/20/22,14:20,20220618,Squarical5,High,Larval,31,-72.9,37.28,105,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical6,High,Larval,31,-73.7,37.15,70,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical7,Ambient,Larval,28.2,-74.3,37.14,180,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical8,Ambient,Larval,28.2,-75,37.12,126,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical9,Ambient,Larval,28.2,-74.7,37.2,95,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical10,Ambient,Larval,28,-74.8,37.13,177,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical11,Ambient,Larval,28.1,-74.5,37.1,128,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Squarical12,Ambient,Larval,27.9,-74,37.13,208,Slightly cloudy,Pacuta larvae in squarical 
+20220620,6/20/22,14:20,20220618,Ambient_Header,Ambient,Larval,27.9,-73.8,37.19,NA,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Amb_Tank1,Ambient,Larval,29.2,-77.3,37.2,184,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,Amb_Tank2,Ambient,Larval,28.5,-77,37.21,94,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,High_Header,High,Larval,30.8,-73.1,37.03,NA,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,High_Tank1,High,Larval,31.1,-76.8,37.2,154,Slightly cloudy,NA
+20220620,6/20/22,14:20,20220618,High_Tank2,High,Larval,31.6,-75.6,37.2,73,Slightly cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical1,High,Larval,30.5,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical2,High,Larval,30.6,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical3,High,Larval,30.8,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical4,High,Larval,30.7,NA,NA,NA,Cloudy,Pacuta larvae in squarical 
+20220621,6/21/22,17:45,20220618,Squarical5,High,Larval,30.7,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical6,High,Larval,30.7,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical7,Ambient,Larval,27.5,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical8,Ambient,Larval,27.6,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical9,Ambient,Larval,27.6,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical10,Ambient,Larval,27.5,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical11,Ambient,Larval,27.8,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Squarical12,Ambient,Larval,27.5,NA,NA,NA,Cloudy,Pacuta larvae in squarical 
+20220621,6/21/22,17:45,20220618,Ambient_Header,Ambient,Larval,27.8,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Amb_Tank1,Ambient,Larval,27.2,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,Amb_Tank2,Ambient,Larval,27.4,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,High_Header,High,Larval,30.9,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,High_Tank1,High,Larval,30.6,NA,NA,NA,Cloudy,NA
+20220621,6/21/22,17:45,20220618,High_Tank2,High,Larval,30.6,NA,NA,NA,Cloudy,NA
+20220622,6/22/22,18:45,20220618,Squarical1,High,Larval,30.1,-72.8,37.13,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical2,High,Larval,30.3,-72.6,37.17,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical3,High,Larval,30.2,-72.6,37.19,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical4,High,Larval,30.2,-72.8,37.14,NA,"Cloudy, rainy",Pacuta larvae in squarical 
+20220622,6/22/22,18:45,20220618,Squarical5,High,Larval,30.3,-72.9,37.13,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical6,High,Larval,30.3,-72.8,37.05,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical7,Ambient,Larval,27.1,-73.7,37.02,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical8,Ambient,Larval,26.9,-74.2,37.01,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical9,Ambient,Larval,26.9,-73.9,37.03,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical10,Ambient,Larval,27.1,-73.6,37.01,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical11,Ambient,Larval,27.1,-73.1,37.01,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Squarical12,Ambient,Larval,26.9,-73.5,37.04,NA,"Cloudy, rainy",Pacuta larvae in squarical 
+20220622,6/22/22,18:45,20220618,Ambient_Header,Ambient,Larval,27.1,-73.8,37.03,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Amb_Tank1,Ambient,Larval,26.7,-75.9,36.94,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,Amb_Tank2,Ambient,Larval,26.7,-74.7,37.02,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,High_Header,High,Larval,30.4,-72.4,37.11,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,High_Tank1,High,Larval,30.6,-74.6,37.08,NA,"Cloudy, rainy",NA
+20220622,6/22/22,18:45,20220618,High_Tank2,High,Larval,30.3,-75.4,37.12,NA,"Cloudy, rainy",NA
+20220625,6/25/22,18:00,20220618,Squarical1,High,Larval,30.9,-76.1,37.02,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical2,High,Larval,31.9,-76.4,36.89,NA,partly cloudy,High temperature?
+20220625,6/25/22,18:00,20220618,Squarical3,High,Larval,30.9,-76.4,36.86,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical4,High,Larval,31.3,-75.7,36.9,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical5,High,Larval,31.1,-76.4,36.98,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical6,High,Larval,31.8,-74.2,36.92,NA,partly cloudy,High temperature?
+20220625,6/25/22,18:00,20220618,Squarical7,Ambient,Larval,26.9,-75.7,36.87,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical8,Ambient,Larval,26.8,-76,36.88,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical9,Ambient,Larval,26.9,-75.2,36.87,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical10,Ambient,Larval,27.1,-75.9,36.83,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical11,Ambient,Larval,26.9,-75.5,36.9,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Squarical12,Ambient,Larval,27.1,-74.9,36.89,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Ambient_Header,Ambient,Larval,27.3,-73.4,36.87,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Amb_Tank1,Ambient,Larval,26.5,-76.8,36.93,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,Amb_Tank2,Ambient,Larval,26.3,-77,36.98,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,High_Header,High,Larval,33.7,-76,36.88,NA,partly cloudy,High temperature?
+20220625,6/25/22,18:00,20220618,High_Tank1,High,Larval,31.1,-77,37.05,NA,partly cloudy,NA
+20220625,6/25/22,18:00,20220618,High_Tank2,High,Larval,31.3,-76.7,37.02,NA,partly cloudy,NA
+20220630,6/30/22,21:35,20220618,Squarical1,High,Larval,32.9,-65.7,37.22,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical2,High,Larval,31.8,-69.5,37.24,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical3,High,Larval,32.6,-68.6,37.17,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical4,High,Larval,31.8,-69.6,37.04,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical5,High,Larval,32.3,-70,36.87,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical6,High,Larval,30.8,-69,37.04,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical7,Ambient,Larval,26.8,-71.7,37.07,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical8,Ambient,Larval,26.8,-71.6,36.99,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical9,Ambient,Larval,26.8,-71.3,37.06,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical10,Ambient,Larval,26.8,-71.2,37.01,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical11,Ambient,Larval,27.1,-71.3,36.85,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Squarical12,Ambient,Larval,26.9,-70.8,37.05,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Ambient_Header,Ambient,Larval,27.4,-71.2,36.92,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Amb_Tank1,Ambient,Larval,26.1,-73.5,37.16,NA,Night,NA
+20220630,6/30/22,21:35,20220618,Amb_Tank2,Ambient,Larval,26.1,-73.8,37.17,NA,Night,NA
+20220630,6/30/22,21:35,20220618,High_Header,High,Larval,35.2,-70,37.18,NA,Night,NA
+20220630,6/30/22,21:35,20220618,High_Tank1,High,Larval,30.7,-74.7,37.43,NA,Night,NA
+20220630,6/30/22,21:35,20220618,High_Tank2,High,Larval,30.1,-71.3,37.41,NA,Night,NA
+20220705,7/5/22,12:15,20220618,Ambient_Header,Acclimation,Adult,26.9,-75.4,36.73,NA,"Rainy in AM, windy/cloudy in PM",NA
+20220705,7/5/22,12:15,20220618,Amb_Tank1,Acclimation,Adult,27.1,-75.5,36.63,274,"Rainy in AM, windy/cloudy in PM",NA
+20220705,7/5/22,12:15,20220618,Amb_Tank2,Acclimation,Adult,26.6,-74.5,36.7,298,"Rainy in AM, windy/cloudy in PM",NA
+20220705,7/5/22,12:15,20220618,High_Header,Acclimation,Adult,26.8,-74.9,36.72,NA,"Rainy in AM, windy/cloudy in PM",NA
+20220705,7/5/22,12:15,20220618,High_Tank1,Acclimation,Adult,27.7,-76.1,36.71,306,"Rainy in AM, windy/cloudy in PM",NA
+20220705,7/5/22,12:15,20220618,High_Tank2,Acclimation,Adult,27,-75.2,36.64,300,"Rainy in AM, windy/cloudy in PM",NA
+20220705,7/5/22,18:55,20220618,Ambient_Header,Acclimation,Adult,26.7,-68.6,36.78,NA,Night,NA
+20220705,7/5/22,18:55,20220618,Amb_Tank1,Acclimation,Adult,26.2,-74.1,36.84,NA,Night,NA
+20220705,7/5/22,18:55,20220618,Amb_Tank2,Acclimation,Adult,26.3,-71.6,36.78,NA,Night,NA
+20220705,7/5/22,18:55,20220618,High_Header,Acclimation,Adult,26.8,NA,NA,NA,Night,NA
+20220705,7/5/22,18:55,20220618,High_Tank1,Acclimation,Adult,26.5,-74.1,36.82,NA,Night,NA
+20220705,7/5/22,18:55,20220618,High_Tank2,Acclimation,Adult,26.8,-74,36.78,NA,Night,NA
+20220706,7/6/22,8:30,20220618,Ambient_Header,Acclimation,Adult,27.1,-73.7,36.91,NA,partly cloudy,NA
+20220706,7/6/22,8:30,20220618,Amb_Tank1,Acclimation,Adult,25.9,-72.3,36.81,36,partly cloudy,NA
+20220706,7/6/22,8:30,20220618,Amb_Tank2,Acclimation,Adult,25.8,-71.1,36.91,36,partly cloudy,NA
+20220706,7/6/22,8:30,20220618,High_Header,Acclimation,Adult,26.6,-68,36.88,NA,partly cloudy,NA
+20220706,7/6/22,8:30,20220618,High_Tank1,Acclimation,Adult,26,-71.9,36.87,45,partly cloudy,NA
+20220706,7/6/22,8:30,20220618,High_Tank2,Acclimation,Adult,26,-69.9,36.89,46,partly cloudy,NA
+20220706,7/6/22,12:40,20220618,Ambient_Header,Acclimation,Adult,27,-75.3,36.71,NA,partly cloudy,NA
+20220706,7/6/22,12:40,20220618,Amb_Tank1,Acclimation,Adult,27.2,-75.2,36.63,301,partly cloudy,NA
+20220706,7/6/22,12:40,20220618,Amb_Tank2,Acclimation,Adult,26.9,-75.4,36.68,299,partly cloudy,NA
+20220706,7/6/22,12:40,20220618,High_Header,Acclimation,Adult,27.1,-75,36.73,NA,partly cloudy,NA
+20220706,7/6/22,12:40,20220618,High_Tank1,Acclimation,Adult,27.3,-75.8,36.72,303,partly cloudy,NA
+20220706,7/6/22,12:40,20220618,High_Tank2,Acclimation,Adult,27,-75.4,36.69,305,partly cloudy,NA
+20220706,7/6/22,20:15,20220618,Ambient_Header,Acclimation,Adult,29.3,-72.9,36.93,NA,Night,Weirdly high? Check in AM
+20220706,7/6/22,20:15,20220618,Amb_Tank1,Acclimation,Adult,28.8,-74.8,36.98,NA,Night,Weirdly high? Check in AM
+20220706,7/6/22,20:15,20220618,Amb_Tank2,Acclimation,Adult,28.1,-74.8,36.98,NA,Night,Weirdly high? Check in AM
+20220706,7/6/22,20:15,20220618,High_Header,Acclimation,Adult,26.8,-72.9,36.92,NA,Night,Weirdly high? Check in AM
+20220706,7/6/22,20:15,20220618,High_Tank1,Acclimation,Adult,29.1,-73.3,36.92,NA,Night,NA
+20220706,7/6/22,20:15,20220618,High_Tank2,Acclimation,Adult,26.8,-73.2,37.05,NA,Night,Weirdly high? Check in AM
+20220707,7/7/22,14:00,20220618,Ambient_Header,Acclimation,Adult,27.4,-78.2,36.76,NA,partly cloudy,NA
+20220707,7/7/22,14:00,20220618,Amb_Tank1,Acclimation,Adult,29.2,-80.1,36.84,180,partly cloudy,NA
+20220707,7/7/22,14:00,20220618,Amb_Tank2,Acclimation,Adult,28.6,-81.3,36.83,155,partly cloudy,NA
+20220707,7/7/22,14:00,20220618,High_Header,Acclimation,Adult,27.3,-74.6,36.77,NA,partly cloudy,NA
+20220707,7/7/22,14:00,20220618,High_Tank1,Acclimation,Adult,29.7,-79,36.85,159,partly cloudy,NA
+20220707,7/7/22,14:00,20220618,High_Tank2,Acclimation,Adult,29.3,-81.9,36.86,150,partly cloudy,NA
+20220707,7/7/22,17:00,20220618,Ambient_Header,Acclimation,Adult,26.9,-69.5,36.9,NA,Cloudy,NA
+20220707,7/7/22,17:00,20220618,Amb_Tank1,Acclimation,Adult,27.6,-79.4,36.92,50,Cloudy,NA
+20220707,7/7/22,17:00,20220618,Amb_Tank2,Acclimation,Adult,27.3,-80,36.91,38,Cloudy,NA
+20220707,7/7/22,17:00,20220618,High_Header,Acclimation,Adult,26.9,-68.2,36.73,NA,Cloudy,NA
+20220707,7/7/22,17:00,20220618,High_Tank1,Acclimation,Adult,27.9,-77.9,36.81,42,Cloudy,NA
+20220707,7/7/22,17:00,20220618,High_Tank2,Acclimation,Adult,28,-81.1,36.83,42,Cloudy,NA
+20220708,7/8/22,8:00,20220618,Ambient_Header,Acclimation,Adult,26.5,-72.9,36.79,NA,"Cloudy, looks like rain",NA
+20220708,7/8/22,8:00,20220618,Amb_Tank1,Acclimation,Adult,25.9,-69.4,36.86,31,"Cloudy, looks like rain",NA
+20220708,7/8/22,8:00,20220618,Amb_Tank2,Acclimation,Adult,25.8,-70.7,36.83,28,"Cloudy, looks like rain",NA
+20220708,7/8/22,8:00,20220618,High_Header,Acclimation,Adult,26.7,-70.3,36.82,NA,"Cloudy, looks like rain",NA
+20220708,7/8/22,8:00,20220618,High_Tank1,Acclimation,Adult,26.1,-69.4,36.85,41,"Cloudy, looks like rain",NA
+20220708,7/8/22,8:00,20220618,High_Tank2,Acclimation,Adult,26.2,-69.9,36.86,38,"Cloudy, looks like rain",NA
+20220708,7/8/22,12:10,20220618,Ambient_Header,Acclimation,Adult,26.7,-75.6,36.87,NA,Cloudy,NA
+20220708,7/8/22,12:10,20220618,Amb_Tank1,Acclimation,Adult,26.7,-75.9,36.88,90,Cloudy,NA
+20220708,7/8/22,12:10,20220618,Amb_Tank2,Acclimation,Adult,26.6,-77,36.86,76,Cloudy,NA
+20220708,7/8/22,12:10,20220618,High_Header,Acclimation,Adult,26.8,-73.8,36.85,NA,Cloudy,NA
+20220708,7/8/22,12:10,20220618,High_Tank1,Acclimation,Adult,27.1,-75.1,36.9,87,Cloudy,NA
+20220708,7/8/22,12:10,20220618,High_Tank2,Acclimation,Adult,27.1,-76,36.87,92,Cloudy,NA
+20220708,7/8/22,17:32,20220618,Ambient_Header,Acclimation,Adult,26.8,-69.1,36.92,NA,Cloudy,"after measurements were taken, single 300W heater was added to each high tank"
+20220708,7/8/22,17:32,20220618,Amb_Tank1,Acclimation,Adult,27.6,-79.2,36.9,NA,Cloudy,"after measurements were taken, single 300W heater was added to each high tank"
+20220708,7/8/22,17:32,20220618,Amb_Tank2,Acclimation,Adult,27.3,-80.1,36.34,NA,Cloudy,"after measurements were taken, single 300W heater was added to each high tank"
+20220708,7/8/22,17:32,20220618,High_Header,Acclimation,Adult,26.7,-68.4,36.7,NA,Cloudy,"after measurements were taken, single 300W heater was added to each high tank"
+20220708,7/8/22,17:32,20220618,High_Tank1,Acclimation,Adult,28,-78,36.85,NA,Cloudy,"after measurements were taken, single 300W heater was added to each high tank"
+20220708,7/8/22,17:32,20220618,High_Tank2,Acclimation,Adult,28.1,-81.3,36.87,NA,Cloudy,"after measurements were taken, single 300W heater was added to each high tank"
+20220708,7/8/22,21:30,20220618,Ambient_Header,Temperature ramp,Adult,26.7,-74.3,37.07,NA,Night,Header is low 
+20220708,7/8/22,21:30,20220618,Amb_Tank1,Temperature ramp,Adult,25.9,-76,37.02,NA,Night,NA
+20220708,7/8/22,21:30,20220618,Amb_Tank2,Temperature ramp,Adult,26,-75,36.93,NA,Night,NA
+20220708,7/8/22,21:30,20220618,High_Header,Temperature ramp,Adult,26.4,-72.8,36.83,NA,Night,NA
+20220708,7/8/22,21:30,20220618,High_Tank1,Temperature ramp,Adult,26.9,-73.6,36.98,NA,Night,NA
+20220708,7/8/22,21:30,20220618,High_Tank2,Temperature ramp,Adult,26.6,-70.5,36.93,NA,Night,NA
+20220709,7/9/22,8:45,20220618,Ambient_Header,Temperature ramp,Adult,27.1,-75,36.73,NA,partly cloudy,Header is low 
+20220709,7/9/22,8:45,20220618,Amb_Tank1,Temperature ramp,Adult,26.3,-75.1,36.65,74,partly cloudy,NA
+20220709,7/9/22,8:45,20220618,Amb_Tank2,Temperature ramp,Adult,26.3,-71.4,36.74,67,partly cloudy,NA
+20220709,7/9/22,8:45,20220618,High_Header,Temperature ramp,Adult,26.7,-67.4,36.69,NA,partly cloudy,NA
+20220709,7/9/22,8:45,20220618,High_Tank1,Temperature ramp,Adult,27.7,-71.8,36.76,79,partly cloudy,Swaping out 300W heaters to see if others will heat tanks faster
+20220709,7/9/22,8:45,20220618,High_Tank2,Temperature ramp,Adult,26.5,-71.8,36.62,77,partly cloudy,Swaping out 300W heaters to see if others will heat tanks faster
+20220709,7/9/22,15:00,20220618,Ambient_Header,Temperature ramp,Adult,26.7,-72.3,36.78,NA,partly cloudy,Cleaned header prior
+20220709,7/9/22,15:00,20220618,Amb_Tank1,Temperature ramp,Adult,27.2,-75.6,36.9,42,partly cloudy,Cleaned header prior
+20220709,7/9/22,15:00,20220618,Amb_Tank2,Temperature ramp,Adult,27.3,-78.7,36.85,40,partly cloudy,Cleaned header prior
+20220709,7/9/22,15:00,20220618,High_Header,Temperature ramp,Adult,26.8,-74,36.32,NA,partly cloudy,NA
+20220709,7/9/22,15:00,20220618,High_Tank1,Temperature ramp,Adult,28.5,-78.8,36.91,34,partly cloudy,NA
+20220709,7/9/22,15:00,20220618,High_Tank2,Temperature ramp,Adult,28.7,-79.8,36.88,40,partly cloudy,NA
+20220710,7/10/22,8:45,20220709,Ambient_Header,Temperature ramp,Adult,26.2,NA,NA,NA,Scattered clouds,NA
+20220710,7/10/22,8:45,20220709,Amb_Tank1,Temperature ramp,Adult,25.7,NA,NA,32,Scattered clouds,NA
+20220710,7/10/22,8:45,20220709,Amb_Tank2,Temperature ramp,Adult,25.4,NA,NA,27,Scattered clouds,NA
+20220710,7/10/22,8:45,20220709,High_Header,Temperature ramp,Adult,26.2,NA,NA,NA,Scattered clouds,"After measurements were taken, single 500W heater was added to header"
+20220710,7/10/22,8:45,20220709,High_Tank1,Temperature ramp,Adult,26.3,NA,NA,33,Scattered clouds,NA
+20220710,7/10/22,8:45,20220709,High_Tank2,Temperature ramp,Adult,26.1,NA,NA,32,Scattered clouds,NA
+20220710,7/10/22,10:15,20220709,Ambient_Header,Temperature ramp,Adult,26.4,-67.2,36.86,NA,Mostly sunny,NA
+20220710,7/10/22,10:15,20220709,Amb_Tank1,Temperature ramp,Adult,25.9,-68.9,36.88,190,Mostly sunny,NA
+20220710,7/10/22,10:15,20220709,Amb_Tank2,Temperature ramp,Adult,25.8,-70.2,37.05,170,Mostly sunny,NA
+20220710,7/10/22,10:15,20220709,High_Header,Temperature ramp,Adult,28.8,-71,37.05,NA,Mostly sunny,NA
+20220710,7/10/22,10:15,20220709,High_Tank1,Temperature ramp,Adult,27.6,-68.5,36.96,269,Mostly sunny,"after measurements were taken, single 300W heater was added to each high tank"
+20220710,7/10/22,10:15,20220709,High_Tank2,Temperature ramp,Adult,27.2,-70.8,36.91,120,Mostly sunny,"after measurements were taken, single 300W heater was added to each high tank"
+20220710,7/10/22,12:10,20220709,Ambient_Header,Temperature ramp,Adult,26.7,-73.9,36.87,NA,Cloudy,NA
+20220710,7/10/22,12:10,20220709,Amb_Tank1,Temperature ramp,Adult,26.7,-75,36.96,187,Cloudy,NA
+20220710,7/10/22,12:10,20220709,Amb_Tank2,Temperature ramp,Adult,26.6,-75.9,36.93,191,Cloudy,NA
+20220710,7/10/22,12:10,20220709,High_Header,Temperature ramp,Adult,28.3,-75.6,36.88,NA,Cloudy,NA
+20220710,7/10/22,12:10,20220709,High_Tank1,Temperature ramp,Adult,29.4,-76.9,37.04,165,Cloudy,NA
+20220710,7/10/22,12:10,20220709,High_Tank2,Temperature ramp,Adult,28.5,-76,36.95,170,Cloudy,NA
+20220710,7/10/22,19:00,20220709,Ambient_Header,Temperature ramp,Adult,26.5,-68.4,37.03,NA,Cloudy/night,NA
+20220710,7/10/22,19:00,20220709,Amb_Tank1,Temperature ramp,Adult,26.1,-73.7,37.06,NA,Cloudy/night,NA
+20220710,7/10/22,19:00,20220709,Amb_Tank2,Temperature ramp,Adult,26.1,-72.4,37.11,NA,Cloudy/night,NA
+20220710,7/10/22,19:00,20220709,High_Header,Temperature ramp,Adult,28.2,-66.7,37.01,NA,Cloudy/night,NA
+20220710,7/10/22,19:00,20220709,High_Tank1,Temperature ramp,Adult,28.9,-75.4,37.14,NA,Cloudy/night,NA
+20220710,7/10/22,19:00,20220709,High_Tank2,Temperature ramp,Adult,27.8,-76.4,37.11,NA,Cloudy/night,NA
+20220711,7/11/22,19:00,20220709,Ambient_Header,Temperature ramp,Adult,26.6,-70.1,37.04,NA,Dusk,NA
+20220711,7/11/22,19:00,20220709,Amb_Tank1,Temperature ramp,Adult,26.1,-73.8,37.08,NA,Dusk,NA
+20220711,7/11/22,19:00,20220709,Amb_Tank2,Temperature ramp,Adult,26.1,-77.1,37.14,NA,Dusk,NA
+20220711,7/11/22,19:00,20220709,High_Header,Temperature ramp,Adult,28.2,-71,37.09,NA,Dusk,NA
+20220711,7/11/22,19:00,20220709,High_Tank1,Temperature ramp,Adult,29.9,-76.2,37.24,NA,Dusk,NA
+20220711,7/11/22,19:00,20220709,High_Tank2,Temperature ramp,Adult,30.8,-75.6,37.2,NA,Dusk,NA
+20220712,7/12/22,8:40,20220709,Ambient_Header,Temperature ramp,Adult,26.2,NA,NA,NA,"Sunny, some clouds",NA
+20220712,7/12/22,8:40,20220709,Amb_Tank1,Temperature ramp,Adult,25.5,NA,NA,76,"Sunny, some clouds",NA
+20220712,7/12/22,8:40,20220709,Amb_Tank2,Temperature ramp,Adult,24.9,NA,NA,53,"Sunny, some clouds",NA
+20220712,7/12/22,8:40,20220709,High_Header,Temperature ramp,Adult,28.2,NA,NA,NA,"Sunny, some clouds",NA
+20220712,7/12/22,8:40,20220709,High_Tank1,Temperature ramp,Adult,29.5,NA,NA,70,"Sunny, some clouds",NA
+20220712,7/12/22,8:40,20220709,High_Tank2,Temperature ramp,Adult,29.8,NA,NA,46,"Sunny, some clouds",NA
+20220712,7/12/22,20:00,20220709,Ambient_Header,Temperature ramp,Adult,26.7,NA,NA,NA,Night,NA
+20220712,7/12/22,20:00,20220709,Amb_Tank1,Temperature ramp,Adult,26.3,NA,NA,NA,Night,NA
+20220712,7/12/22,20:00,20220709,Amb_Tank2,Temperature ramp,Adult,26.2,NA,NA,NA,Night,NA
+20220712,7/12/22,20:00,20220709,High_Header,Temperature ramp,Adult,29.1,NA,NA,NA,Night,NA
+20220712,7/12/22,20:00,20220709,High_Tank1,Temperature ramp,Adult,20.5,NA,NA,NA,Night,NA
+20220712,7/12/22,20:00,20220709,High_Tank2,Temperature ramp,Adult,30.6,NA,NA,NA,Night,NA
+20220713,7/13/22,8:30,20220709,Ambient_Header,Exposure,Adult,26.3,-69.7,36.65,NA,Cloudy,NA
+20220713,7/13/22,8:30,20220709,Amb_Tank1,Exposure,Adult,25.8,-71,36.66,77,Cloudy,NA
+20220713,7/13/22,8:30,20220709,Amb_Tank2,Exposure,Adult,25.3,-70.8,36.56,67,Cloudy,NA
+20220713,7/13/22,8:30,20220709,High_Header,Exposure,Adult,28.5,-71.4,36.51,NA,Cloudy,NA
+20220713,7/13/22,8:30,20220709,High_Tank1,Exposure,Adult,29.9,-69.7,36.99,71,Cloudy,NA
+20220713,7/13/22,8:30,20220709,High_Tank2,Exposure,Adult,29.9,-69.8,36.88,78,Cloudy,NA
+20220713,7/13/22,14:45,20220709,Ambient_Header,Exposure,Adult,27,-72.6,36.62,NA,Cloudy,NA
+20220713,7/13/22,14:45,20220709,Amb_Tank1,Exposure,Adult,27.6,-80.1,36.62,165,Cloudy,NA
+20220713,7/13/22,14:45,20220709,Amb_Tank2,Exposure,Adult,27.3,-79,36.72,126,Cloudy,NA
+20220713,7/13/22,14:45,20220709,High_Header,Exposure,Adult,30,-75.5,36.73,NA,Cloudy,NA
+20220713,7/13/22,14:45,20220709,High_Tank1,Exposure,Adult,32,-80.7,36.94,112,Cloudy,NA
+20220713,7/13/22,14:45,20220709,High_Tank2,Exposure,Adult,32.3,-80.8,37.02,117,Cloudy,NA
+20220713,7/13/22,19:00,20220709,Ambient_Header,Exposure,Adult,26.5,NA,NA,NA,Dusk,NA
+20220713,7/13/22,19:00,20220709,Amb_Tank1,Exposure,Adult,26.3,NA,NA,NA,Dusk,NA
+20220713,7/13/22,19:00,20220709,Amb_Tank2,Exposure,Adult,26.4,NA,NA,NA,Dusk,NA
+20220713,7/13/22,19:00,20220709,High_Header,Exposure,Adult,26.7,NA,NA,NA,Dusk,NA
+20220713,7/13/22,19:00,20220709,High_Tank1,Exposure,Adult,29.6,NA,NA,NA,Dusk,NA
+20220713,7/13/22,19:00,20220709,High_Tank2,Exposure,Adult,30,NA,NA,NA,Dusk,NA
+20220714,7/14/22,8:00,20220709,Ambient_Header,Exposure,Adult,26.6,-71.1,36.47,NA,Cloudy,NA
+20220714,7/14/22,8:00,20220709,Amb_Tank1,Exposure,Adult,26,-72.5,36.55,44,Cloudy,NA
+20220714,7/14/22,8:00,20220709,Amb_Tank2,Exposure,Adult,25.5,-71.5,36.52,32,Cloudy,NA
+20220714,7/14/22,8:00,20220709,High_Header,Exposure,Adult,28.9,-72.9,36.55,NA,Cloudy,NA
+20220714,7/14/22,8:00,20220709,High_Tank1,Exposure,Adult,30.1,-71.5,36.78,35,Cloudy,NA
+20220714,7/14/22,8:00,20220709,High_Tank2,Exposure,Adult,30.1,-70.7,36.72,39,Cloudy,NA
+20220714,7/14/22,12:00,20220709,Ambient_Header,Exposure,Adult,27.2,-77.7,36.57,NA,"Sunny, some clouds",NA
+20220714,7/14/22,12:00,20220709,Amb_Tank1,Exposure,Adult,27.8,-80.8,36.6,407,"Sunny, some clouds",NA
+20220714,7/14/22,12:00,20220709,Amb_Tank2,Exposure,Adult,27.3,-79,36.61,499,"Sunny, some clouds",NA
+20220714,7/14/22,12:00,20220709,High_Header,Exposure,Adult,30,-78.2,36.61,NA,"Sunny, some clouds",NA
+20220714,7/14/22,12:00,20220709,High_Tank1,Exposure,Adult,32.6,-82.7,36.87,419,"Sunny, some clouds",NA
+20220714,7/14/22,12:00,20220709,High_Tank2,Exposure,Adult,32.1,-81.8,36.8,404,"Sunny, some clouds",NA
+20220715,7/15/22,18:45,20220709,Ambient_Header,Exposure,Adult,27.1,-74.9,36.73,NA,"Dusk, cloudy",NA
+20220715,7/15/22,18:45,20220709,Amb_Tank1,Exposure,Adult,27.5,-80.4,36.79,NA,"Dusk, cloudy",NA
+20220715,7/15/22,18:45,20220709,Amb_Tank2,Exposure,Adult,27.9,-81.5,36.73,NA,"Dusk, cloudy",NA
+20220715,7/15/22,18:45,20220709,High_Header,Exposure,Adult,27.6,-73.3,36.77,NA,"Dusk, cloudy",NA
+20220715,7/15/22,18:45,20220709,High_Tank1,Exposure,Adult,30.2,-82.8,37.06,NA,"Dusk, cloudy",NA
+20220715,7/15/22,18:45,20220709,High_Tank2,Exposure,Adult,30.8,-81.8,36.99,NA,"Dusk, cloudy",NA
+20220716,7/15/22,12:30,20220709,Ambient_Header,Exposure,Adult,26.9,-77.4,36.63,NA,Mostly cloudy,NA
+20220716,7/15/22,12:30,20220709,Amb_Tank1,Exposure,Adult,27.2,-79.5,36.66,103,Mostly cloudy,NA
+20220716,7/15/22,12:30,20220709,Amb_Tank2,Exposure,Adult,27,-79.5,36.69,76,Mostly cloudy,NA
+20220716,7/15/22,12:30,20220709,High_Header,Exposure,Adult,27.1,-78.6,36.61,NA,Mostly cloudy,NA
+20220716,7/15/22,12:30,20220709,High_Tank1,Exposure,Adult,30.9,-82.5,36.93,86,Mostly cloudy,NA
+20220716,7/15/22,12:30,20220709,High_Tank2,Exposure,Adult,31.2,-81.2,36.98,85,Mostly cloudy,NA

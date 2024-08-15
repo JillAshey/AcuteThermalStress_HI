@@ -1,0 +1,124 @@
+---
+title: "Color Score"
+author: "jillashey"
+date: "2022-12-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load libraries 
+
+```{r}
+library("vegan")
+library("ggpubr")
+library("gridExtra")
+library("plyr") 
+library("emmeans")
+library("multcompView")
+library("rstatix")
+library("Rmisc")
+```
+
+## Read in data
+
+```{r}
+data <- read.csv("data/Physiology/ColorScore-Hawaii2022.csv", header = T, na.strings=c("","NA"))
+
+data <- na.omit(data) # remove NAs in dataset 
+```
+
+## Normalize to color standards. 
+
+```{r}
+data$Red.Norm.Coral <- data$Red.Coral/data$Red.Standard
+data$Blue.Norm.Coral <- data$Blue.Coral/data$Blue.Standard
+data$Green.Norm.Coral <- data$Green.Coral/data$Green.Standard
+
+# Make barplots of normalized data
+par(mfrow=c(1,3))
+boxplot(data$Red.Standard)
+boxplot(data$Green.Standard)
+boxplot(data$Blue.Standard)
+which((data$Red.Standard)==min((data$Red.Standard)))
+which((data$Green.Standard)==min((data$Green.Standard)))
+which((data$Blue.Standard)==min((data$Blue.Standard)))
+par(mfrow=c(1,3))
+boxplot(data$Red.Norm.Coral)
+boxplot(data$Green.Norm.Coral)
+boxplot(data$Blue.Norm.Coral)
+```
+
+## Visualize w/ PCA
+```{r}
+color.score <- as.matrix(cbind(data$Red.Norm.Coral,data$Green.Norm.Coral,data$Blue.Norm.Coral)) #create matrix
+rownames(color.score) <- data$ID #name columns in dataframe
+dist <- vegdist(color.score, method="euclidean") #calculate distance matrix of color scores
+PCA.color <- princomp(dist) #run principal components Analysis
+summary(PCA.color) # view variance explained by PCs
+Color <- as.data.frame(PCA.color$scores[,1]) #extract PC1
+Color$Fragment.ID <- rownames(color.score)
+Color  <- cbind(Color, data$Timepoint.Sampled, data$Treatment, data$Species, data$Genotype)
+colnames(Color) <- c("Color.Score", "Fragment.ID", "Timepoint", "Treatment", "Species", "Genotype")        
+Color$Group <- paste(Color$Timepoint, Color$Treatment, Color$Species)
+
+# write to table 
+write.table(Color,"output/Color_Score_Output.csv",sep=",", row.names=FALSE)
+```
+
+Initial plotting 
+
+```{r}
+# separate by species
+Pacuta_Color <- subset(Color, Species=="Pacuta")
+Mcap_Color <- subset(Color, Species=="Mcapitata")
+
+# Plot Pacuta
+pacuta_color_plot <- ggplot(Pacuta_Color, aes(x=Timepoint, y = Color.Score, colour=Treatment)) +
+  geom_boxplot()
+pacuta_color_plot
+
+# Plot Mcapitata
+mcap_color_plot <- ggplot(Mcap_Color, aes(x=Timepoint, y = Color.Score, colour=Treatment)) +
+  geom_boxplot()
+mcap_color_plot
+```
+
+
+
+## Statistical Analysis and Plotting 
+```{r}
+# for use in plotting to avoid having to run PCA again
+Color.Score <- read.csv("output/Color_Score_Output.csv", header=T, sep=",", na.string="NA") #read in data file
+
+
+
+
+
+
+
+mod1 <- aov(sqrt(Color.Score+200) ~ Treatment*Timepoint, data=Color.Score) #run an ANOVA ## add Timepoint as factor later 
+hist(residuals(mod1)) #look at normality of data
+boxplot(residuals(mod1)) #look at normality of data
+summary(mod1)
+#posthoc analyses
+marginal <- emmeans(mod1, ~ Treatment)
+#letter display of posthoc results
+phlett <- multcomp::cld(marginal,
+          alpha=0.05,
+          Letters=letters,
+          adjust="tukey")
+phlett <- phlett[order(phlett$Treatment),]
+phlett
+```
+
+
+
+
+
+
+
+
+

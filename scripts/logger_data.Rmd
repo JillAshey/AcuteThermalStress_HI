@@ -1,0 +1,178 @@
+---
+title: "logger data"
+author: "jillashey"
+date: '2022-07-11'
+output: html_document
+---
+
+This script plots Hobo temperature and light data from an adult acute thermal stress experiment at HIMB 2022. 
+
+## Load packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(lubridate)
+library(tidyverse)
+library(emmeans)
+library(gridExtra)
+```
+
+## Read data in 
+```{r}
+## Ambient
+# Ambient Header
+amb_header <- read.csv("data/temperature/20220719/Amb_Header_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+amb_header$Treatment <- "Ambient"
+amb_header$Tank <- "Ambient-Header"
+
+# Amb Tank 1 A
+amb_tank1_A <- read.csv("data/temperature/20220719/Amb1_Tank_A_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+amb_tank1_A$Treatment <- "Ambient"
+amb_tank1_A$Tank <- "Ambient1-Tank-A"
+
+# Amb Tank 1 B
+amb_tank1_B <- read.csv("data/temperature/20220719/Amb1_Tank_B_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+amb_tank1_B$Treatment <- "Ambient"
+amb_tank1_B$Tank <- "Ambient1-Tank-B"
+
+# Amb Tank 2 A
+amb_tank2_A <- read.csv("data/temperature/20220719/Amb2_Tank_A_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+amb_tank2_A$Treatment <- "Ambient"
+amb_tank2_A$Tank <- "Ambient2-Tank-A"
+
+# Amb Tank 2 B
+amb_tank2_B <- read.csv("data/temperature/20220719/Amb2_Tank_B_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+amb_tank2_B$Treatment <- "Ambient"
+amb_tank2_B$Tank <- "Ambient2-Tank-B"
+
+
+
+## High
+# High Header
+high_header <- read.csv("data/temperature/20220719/High_Header_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+high_header$Treatment <- "High"
+high_header$Tank <- "High-Header"
+
+# High Tank 1 A
+high_tank1_A <- read.csv("data/temperature/20220719/High1_Tank_A_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+high_tank1_A$Treatment <- "High"
+high_tank1_A$Tank <- "High1-Tank-A"
+
+# High Tank 1 B
+high_tank1_B <- read.csv("data/temperature/20220719/High1_Tank_B_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+high_tank1_B$Treatment <- "High"
+high_tank1_B$Tank <- "High1-Tank-B"
+
+# High Tank 2 A
+high_tank2_A <- read.csv("data/temperature/20220719/High2_Tank_A_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+high_tank2_A$Treatment <- "High"
+high_tank2_A$Tank <- "High2-Tank-A"
+
+# High Tank 2 B
+high_tank2_B <- read.csv("data/temperature/20220719/High2_Tank_B_20220719.csv", sep=",", header=T, na.strings = "NA")[ ,2:4]
+high_tank2_B$Treatment <- "High"
+high_tank2_B$Tank <- "High2-Tank-B"
+```
+
+## Bind dataframes together and parse data & time
+```{r}
+data <- rbind(amb_header, amb_tank1_A, amb_tank1_B, amb_tank2_A, amb_tank2_B,
+                high_header, high_tank1_A, high_tank1_B, high_tank2_A, high_tank2_B)
+
+colnames(data) <- c("Date.Time", "Temp", "Light", "Treatment", "Tank")
+data$Date.Time <- parse_date_time(data$Date.Time, "mdyHMS", tz = "HST")
+```
+
+## Subset data after 7/8/22 - when temperature ramp began
+```{r}
+filt_data <- data %>% filter(Date.Time > "2022-07-08 12:00:00")
+```
+
+## Plot temperature data
+```{r}
+temp <- filt_data %>% ggplot(aes(x=Date.Time, y=Temp)) +
+  geom_line(aes(color = Tank), size = 1) +
+  ylab("Temperature °C") + 
+  #geom_vline(xintercept = as.POSIXct(as.Date(c("2022-07-05 18:00:00")))) +
+  #geom_vline(xintercept = as.POSIXct(as.Date(c("2022-07-08 18:00:00")))) +
+  scale_color_manual(values=c("darkblue", "lightblue", "lightblue", "lightblue", "lightblue", "darkred", "pink", "pink", "pink", "pink"))
+temp
+
+# Save plot
+ggsave("output/temperature/Temperature.Treatment.pdf", plot = last_plot(), width = 8, height = 4)
+```
+
+## Plot light data
+```{r}
+light <- filt_data %>% ggplot(aes(x=Date.Time, y=Light)) +
+  geom_line(aes(color = Tank), size = 1) +
+  ylab("Light (lux)") + 
+  scale_color_manual(values=c("darkblue", "lightblue", "lightblue", "lightblue", "lightblue", "darkred", "pink", "pink", "pink", "pink"))
+light
+ggsave("output/temperature/Light.pdf", plot = last_plot(), width = 8, height = 4)
+
+
+## Remove light values above 20,000 lux
+light_less <- filt_data[filt_data$Light < 20000, ]
+less <- light_less %>% ggplot(aes(x=Date.Time, y=Light)) +
+  geom_line(aes(color = Tank), size = 1) +
+  ylab("Light (lux)") + 
+  scale_color_manual(values=c("darkblue", "lightblue", "lightblue", "lightblue", "lightblue", "darkred", "pink", "pink", "pink", "pink"))
+less
+```
+
+
+# Plot by treatment
+
+## Separate into treatment dataframes 
+```{r}
+amb <- filt_data %>% filter(Treatment == "Ambient")
+high <- filt_data %>% filter(Treatment == "High")
+```
+
+## Plot by temperature 
+```{r}
+## Ambient 
+amb_temp <- amb %>% ggplot(aes(x=Date.Time, y=Temp)) +
+  geom_line(aes(color = Tank), size = 1) +
+  ylab("Temperature °C") + 
+  scale_color_manual(values=c("darkblue", "lightblue", "lightblue", "lightblue", "lightblue"))
+amb_temp
+ggsave("output/temperature/Ambient.Treatment.pdf", plot = last_plot(), width = 8, height = 4)
+
+
+
+## High
+high_temp <- high %>% ggplot(aes(x=Date.Time, y=Temp)) +
+  geom_line(aes(color = Tank), size = 1) +
+  ylab("Temperature °C") + 
+  scale_color_manual(values=c("darkred", "pink", "pink", "pink", "pink"))
+high_temp
+ggsave("output/temperature/High.Treatment.pdf", plot = last_plot(), width = 8, height = 4)
+
+```
+
+## Looking at High Tank 1 & High Tank 2
+## Separate into treatment dataframes 
+```{r}
+## High1 tank
+high1 <- high %>% filter(Tank == "High1-Tank-A" | Tank == "High1-Tank-B")
+high1_temp <- high1 %>% ggplot(aes(x=Date.Time, y=Temp)) +
+  geom_line(aes(color = Tank), size = 1) +
+  ylab("Temperature °C") + 
+  scale_color_manual(values=c("purple", "pink"))
+high1_temp
+
+
+## High2 tank
+high2 <- high %>% filter(Tank == "High2-Tank-A" | Tank == "High2-Tank-B")
+high2_temp <- high2 %>% ggplot(aes(x=Date.Time, y=Temp)) +
+  geom_line(aes(color = Tank), size = 1) +
+  ylab("Temperature °C") + 
+  scale_color_manual(values=c("purple", "pink"))
+high2_temp
+```
+
+
+
+
+

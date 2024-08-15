@@ -1,0 +1,105 @@
+---
+title: "PR"
+author: "jillashey"
+date: '2022-07-14'
+output: html_document
+---
+
+This script analyzes and plots PR data from adult acute thermal stress exposure from HIMB 2022.
+
+When I exported the data from Presens measurement software, I exported as excel. The excel format is not the correct one for this script but there is no option in the Presens software to export files as csv. I'm using the Putnam lab PC and it seems like I am the first person to be making measurements with the Presens software on this computer. Maybe need to update the software.
+
+
+## Load packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+## install packages if you dont already have them in your library
+if (!require("devtools")) install.packages("devtools")
+if (!require("furrr")) install.packages("furrr")
+if (!require("future")) install.packages("future")
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("gridExtra")) install.packages("gridExtra")
+if (!require("ggpubr")) install.packages("ggpubr")
+if (!require("lubridate")) install.packages("lubridate")
+if (!require("cowplot")) install.packages("cowplot")
+if (!require("LoLinR")) install_github('colin-olito/LoLinR') 
+
+## load libraries
+library(devtools)
+library(LoLinR)
+library(tidyverse)
+library(gridExtra)
+library(ggpubr)
+library(lubridate)
+library(cowplot)
+
+## libraries for parallel processing
+library(future)
+library(furrr)
+```
+
+## Import data
+```{r}
+path.p <- "data/Physiology/PR-adult/raw" #the location of all your respirometry files 
+
+# List data files
+file.names <- list.files(path = path.p, pattern = "csv$")  # list all csv file names in the folder
+file.names <- file.names[!grepl("metadata", file.names)]   # omit metadata from files to be read in as data
+
+# Load sample metadata (i.e., which corals were in which runs)
+sample.info <- read_csv(file = "data/Physiology/PR-adult/PR_sample_metadata.csv")
+# Load run metadata (i.e., light levels and interval times for each run)
+run.info <- read_csv(file = "data/Physiology/PR-adult/PR_run_metadata.csv")
+
+# Join all coral and run metadata
+metadata <- full_join(sample.info, run.info) %>%
+  mutate(Date = as_date(as.character(Date), format = "%Y%m%d", tz = "HST"))
+
+# Select only certain columnns
+metadata <- metadata %>%
+  select(Date, 
+         colony_id, 
+         Run, 
+         Treatment, 
+         Chamber.Vol.L, 
+         Timepoint,
+         Start.time, 
+         Stop.time, 
+         Light_Value,
+         Surface.Area.cm2)
+
+# Read in all data files
+df <- tibble(file.name = file.names) %>%
+  mutate(colony_id = gsub("_.*", "", file.name),                              # Get colony_id from filename
+          info = map(colony_id, ~filter(metadata, colony_id == .)),           # Get associated sample info
+         data0 = map(file.name, ~read_csv(file.path(path.p, .))))   # Get associated O2 data
+
+## need to break up date and time column for csv files!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+# Select only Time, Value, and Temp columns from O2 data
+df <- df %>%
+  mutate(data0 = map(data0, ~select(., Date, Oxygen, Temperature)))   
+```
+
+## Use the time breaks in the sample info to link O2 data with light levels
+```{r}
+df <- df %>%
+  mutate(intervals = map2(data0, info, function(.x, .y) {
+    split(.x, f = cut(as.numeric(.x$Date), breaks = as.numeric(c(.y$Start.time, last(.y$Stop.time))),
+                      labels = as.character(.y$Light_Value)))})) %>%
+  mutate(data = map(intervals, ~ unnest(tibble(.), .id = "Light_Value")))
+## 'data' now contains the O2 data with the corresponding light level as another column
+## Example of what 'data' for each sample looks like:
+df$data[[1]]
+```
+
+
+

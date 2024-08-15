@@ -1,0 +1,149 @@
+---
+title: "Daily Measurements"
+author: "jillashey"
+date: '2022-07-08'
+output: html_document
+---
+
+This script plots the daily measurements for the HIMB 2022 experiments.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load packages
+```{r}
+library(tidyverse)
+library(ggpubr)
+```
+
+## Load data
+```{r}
+daily <- read.csv("data/Daily.csv", header = T)
+daily$Timepoint <- as.Date(daily$Timepoint, "%m/%d/%Y")
+daily$Tank <- as.factor(daily$Tank)
+```
+
+## Subset by adult experiments
+```{r}
+daily <- subset(daily, LifeStage=="Adult")
+```
+
+# Discrete pH calculations from Tris calibrations.
+```{r}
+path <-("data/ph_Tris") #set path to calibration files
+file.names<-list.files(path = path, pattern = "csv$") #list all the file names in the folder to get only get the csv files
+pH.cals <- data.frame(matrix(NA, nrow=length(file.names), ncol=3, dimnames=list(file.names,c("Date", "Intercept", "Slope")))) #generate a 3 column dataframe with specific column names
+for(i in 1:length(file.names)) { # for every file in list start at the first and run this following function
+  Calib.Data <-read.table(file.path(path,file.names[i]), header=TRUE, sep=",", na.string="NA", as.is=TRUE) #reads in the data files
+  file.names[i]
+  model <-lm(mVTris ~ TTris, data=Calib.Data) #runs a linear regression of mV as a function of temperature
+  coe <- coef(model) #extracts the coeffecients
+  summary(model)$r.squared #extracts the r squared
+  plot(Calib.Data$mVTris, Calib.Data$TTris, main = summary(model)$r.squared) #plots the regression data
+  pH.cals[i,2:3] <- coe #inserts coefficients in the dataframe
+  pH.cals[i,1] <- substr(file.names[i],1,8) #stores the file name in the Date column
+}
+colnames(pH.cals) <- c("Calib.Date",  "Intercept",  "Slope") #rename columns
+pH.cals #view data
+#constants for use in pH calculation 
+R <- 8.31447215 #gas constant in J mol-1 K-1 
+F <- 96485.339924 #Faraday constant in coulombs mol-1
+#merge with Seawater chemistry file
+SW.chem <- merge(daily, pH.cals, by="Calib.Date")
+```
+
+## Calculate total pH. 
+```{r}
+mvTris <- SW.chem$Temp_C*SW.chem$Slope+SW.chem$Intercept #calculate the mV of the tris standard using the temperature mv relationships in the measured standard curves 
+STris<-35 #salinity of the Tris
+phTris<- (11911.08-18.2499*STris-0.039336*STris^2)*(1/(SW.chem$Temp_C+273.15))-366.27059+ 0.53993607*STris+0.00016329*STris^2+(64.52243-0.084041*STris)*log(SW.chem$Temp_C+273.15)-0.11149858*(SW.chem$Temp_C+273.15) #calculate the pH of the tris (Dickson A. G., Sabine C. L. and Christian J. R., SOP 6a)
+SW.chem$pH.Total<-phTris+(mvTris/1000-SW.chem$pH.MV/1000)/(R*(SW.chem$Temp_C+273.15)*log(10)/F) #calculate the pH on the total scale (Dickson A. G., Sabine C. L. and Christian J. R., SOP 6a)
+```
+
+## Plot daily measurements 
+```{r, warning=FALSE}
+# By Treatment
+temp.trt <- ggplot(SW.chem, aes(x=Treatment, y=Temp_C)) +
+  geom_boxplot(aes(color = Tank), size = 1) +
+  ylab("Temperature°C") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_color_manual(values=c("lightblue","lightblue","darkblue", "darkred", "pink", "pink"))
+temp.trt
+
+ph.trt <- ggplot(SW.chem, aes(x=Treatment, y=pH.Total)) +
+  geom_boxplot(aes(color = Tank), size = 1) +
+  ylab("pH Total") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_color_manual(values=c("lightblue","lightblue","darkblue", "darkred", "pink", "pink"))
+ph.trt
+
+sal.trt <- ggplot(SW.chem, aes(x=Treatment, y=Salinity_ppt)) +
+  geom_boxplot(aes(color = Tank), size = 1) +
+  ylab("Salinity (ppt)") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_color_manual(values=c("lightblue","lightblue","darkblue", "darkred", "pink", "pink"))
+sal.trt
+
+light.trt <- ggplot(SW.chem, aes(x=Treatment, y=Light_PAR)) +
+  geom_boxplot(aes(color = Tank), size = 1) +
+  ylab("Light (PAR)") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_color_manual(values=c("lightblue","lightblue", "pink", "pink"))
+light.trt
+
+# Save treatment plots
+p1 <- ggarrange(temp.trt, ph.trt, sal.trt, light.trt, ncol=4, nrow=1, common.legend = TRUE, legend="bottom")
+ggsave("output/Daily-Treatment.pdf", p1)
+
+
+
+# By Tank
+temp.tank <- ggplot(SW.chem, aes(x=Tank, y=Temp_C)) +
+  geom_boxplot(aes(color = Treatment), size = 1) +
+  ylab("Temperature°C") +
+    theme(axis.text.x = element_text(angle = 90))
+temp.tank
+
+ph.tank <- ggplot(SW.chem, aes(x=Tank, y=pH.Total)) +
+  geom_boxplot(aes(color = Treatment), size = 1) +
+  ylab("pH Total") +
+    theme(axis.text.x = element_text(angle = 90))
+ph.tank
+
+sal.tank <- ggplot(SW.chem, aes(x=Tank, y=Salinity_ppt)) +
+  geom_boxplot(aes(color = Treatment), size = 1) +
+  ylab("Salinity (ppt)") +
+    theme(axis.text.x = element_text(angle = 90))
+sal.tank
+
+light.tank <- ggplot(SW.chem, aes(x=Tank, y=Light_PAR)) +
+  geom_boxplot(aes(color = Treatment), size = 1) +
+  ylab("Light (PAR)") +
+    theme(axis.text.x = element_text(angle = 90))
+light.tank
+
+# Save tank plots
+p2 <- ggarrange(temp.tank, ph.tank, sal.tank, light.tank, ncol=4, nrow=1, common.legend = TRUE, legend="bottom")
+ggsave("output/Daily-Tank.pdf", p2)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
