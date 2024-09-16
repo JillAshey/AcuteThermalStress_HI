@@ -25,7 +25,7 @@ library("Rmisc")
 ## Read in data
 
 ```{r}
-data <- read.csv("data/Physiology/ColorScore-Hawaii2022.csv", header = T, na.strings=c("","NA"))
+data <- read.csv("../data/Physiology/ColorScore-Hawaii2022.csv", header = T, na.strings=c("","NA"))
 
 data <- na.omit(data) # remove NAs in dataset 
 ```
@@ -51,6 +51,26 @@ boxplot(data$Green.Norm.Coral)
 boxplot(data$Blue.Norm.Coral)
 ```
 
+```{r}
+ggplot(data, aes(x=Timepoint.Sampled, y = Blue.Norm.Coral, colour=Treatment)) +
+  geom_point() +
+  facet_wrap(~Species) 
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Visualize w/ PCA
 ```{r}
 color.score <- as.matrix(cbind(data$Red.Norm.Coral,data$Green.Norm.Coral,data$Blue.Norm.Coral)) #create matrix
@@ -65,7 +85,7 @@ colnames(Color) <- c("Color.Score", "Fragment.ID", "Timepoint", "Treatment", "Sp
 Color$Group <- paste(Color$Timepoint, Color$Treatment, Color$Species)
 
 # write to table 
-write.table(Color,"output/Color_Score_Output.csv",sep=",", row.names=FALSE)
+#write.table(Color,"output/Color_Score_Output.csv",sep=",", row.names=FALSE)
 ```
 
 Initial plotting 
@@ -86,33 +106,6 @@ mcap_color_plot <- ggplot(Mcap_Color, aes(x=Timepoint, y = Color.Score, colour=T
 mcap_color_plot
 ```
 
-
-
-## Statistical Analysis and Plotting 
-```{r}
-# for use in plotting to avoid having to run PCA again
-Color.Score <- read.csv("output/Color_Score_Output.csv", header=T, sep=",", na.string="NA") #read in data file
-
-
-
-
-
-
-
-mod1 <- aov(sqrt(Color.Score+200) ~ Treatment*Timepoint, data=Color.Score) #run an ANOVA ## add Timepoint as factor later 
-hist(residuals(mod1)) #look at normality of data
-boxplot(residuals(mod1)) #look at normality of data
-summary(mod1)
-#posthoc analyses
-marginal <- emmeans(mod1, ~ Treatment)
-#letter display of posthoc results
-phlett <- multcomp::cld(marginal,
-          alpha=0.05,
-          Letters=letters,
-          adjust="tukey")
-phlett <- phlett[order(phlett$Treatment),]
-phlett
-```
 
 
 

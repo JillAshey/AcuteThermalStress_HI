@@ -1,0 +1,161 @@
+ID,Species,Genotype,Tape Color,Replicate Genotype,Acclimation Tank,Treatment Tank,Treatment,Timepoint Sampled,Metric
+1471,Pacuta,P-G1,Brown,1,High Tank 2,Ambient Tank 1,Ambient,Day 1,Physiology
+2752,Pacuta,P-G1,Brown,2,High Tank 2,Ambient Tank 2,Ambient,Day 5,Physiology
+1451,Pacuta,P-G1,Brown,3,High Tank 2,Ambient Tank 1,Ambient,Day 5,Molecular
+1641,Pacuta,P-G1,Brown,4,High Tank 2,High Tank 1,High,Day 3,Physiology 
+1320,Pacuta,P-G1,Brown,5,High Tank 2,Ambient Tank 2,Ambient,Day 3,Physiology 
+1227,Pacuta,P-G1,Brown,6,High Tank 2,Ambient Tank 2,Ambient,Day 1,Molecular
+1682,Pacuta,P-G1,Brown,7,High Tank 2,High Tank 2,High,Day 7,Molecular
+1752,Pacuta,P-G1,Brown,8,High Tank 2,High Tank 1,High,Day 1,Molecular
+1330,Pacuta,P-G1,Brown,9,High Tank 2,High Tank 1,High,Day 7,Physiology
+1094,Pacuta,P-G1,Brown,10,High Tank 2,Ambient Tank 1,Ambient,Day 3,Molecular
+1038,Pacuta,P-G1,Brown,11,High Tank 2,Ambient Tank 2,Ambient,Day 7,Molecular
+1276,Pacuta,P-G1,Brown,12,High Tank 2,High Tank 2,High,Day 3,Molecular
+2556,Pacuta,P-G1,Brown,13,High Tank 2,High Tank 2,High,Day 5,Physiology
+1644,Pacuta,P-G1,Brown,14,High Tank 2,High Tank 2,High,Day 1,Physiology
+1324,Pacuta,P-G1,Brown,15,High Tank 2,High Tank 1,High,Day 5,Molecular
+1741,Pacuta,P-G1,Brown,16,High Tank 2,Ambient Tank 1,Ambient,Day 7,Physiology
+2382,Mcapitata,M-G2,Purple,1,High Tank 2,Ambient Tank 1,Ambient,Day 3,Physiology 
+1616,Mcapitata,M-G2,Purple,2,High Tank 2,Ambient Tank 2,Ambient,Day 3,Molecular
+1478,Mcapitata,M-G2,Purple,3,High Tank 2,High Tank 2,High,Day 5,Molecular
+1066,Mcapitata,M-G2,Purple,4,High Tank 2,High Tank 2,High,Day 3,Physiology 
+1626,Mcapitata,M-G2,Purple,5,High Tank 2,High Tank 1,High,Day 3,Molecular
+2758,Mcapitata,M-G2,Purple,6,High Tank 2,High Tank 1,High,Day 1,Physiology
+1220,Mcapitata,M-G2,Purple,7,High Tank 2,Ambient Tank 2,Ambient,Day 1,Physiology
+1542,Mcapitata,M-G2,Purple,8,High Tank 2,Ambient Tank 2,Ambient,Day 7,Physiology
+2559,Mcapitata,M-G2,Purple,9,High Tank 2,Ambient Tank 1,Ambient,Day 5,Physiology
+1631,Mcapitata,M-G2,Purple,10,High Tank 2,High Tank 1,High,Day 7,Molecular
+1690,Mcapitata,M-G2,Purple,11,High Tank 2,Ambient Tank 1,Ambient,Day 1,Molecular
+1280,Mcapitata,M-G2,Purple,12,High Tank 2,Ambient Tank 2,Ambient,Day 5,Molecular
+1601,Mcapitata,M-G2,Purple,13,High Tank 2,High Tank 1,High,Day 5,Physiology
+2980,Mcapitata,M-G2,Purple,14,High Tank 2,Ambient Tank 1,Ambient,Day 5,Physiology
+1500,Mcapitata,M-G2,Purple,15,High Tank 2,High Tank 2,High,Day 7,Physiology
+1298,Mcapitata,M-G2,Purple,16,High Tank 2,High Tank 2,High,Day 1,Molecular
+1687,Pacuta,P-G2,Yellow,1,Ambient Tank 2,High Tank 1,High,Day 3,Molecular
+1822,Pacuta,P-G2,Yellow,2,Ambient Tank 2,Ambient Tank 2,Ambient,Day 7,Physiology
+1760,Pacuta,P-G2,Yellow,3,Ambient Tank 2,High Tank 2,High,Day 7,Physiology
+1289,Pacuta,P-G2,Yellow,4,Ambient Tank 2,High Tank 2,High,Day 5,Molecular
+1550,Pacuta,P-G2,Yellow,5,Ambient Tank 2,High Tank 1,High,Day 7,Molecular
+1422,Pacuta,P-G2,Yellow,6,Ambient Tank 2,High Tank 1,High,Day 5,Physiology
+1564,Pacuta,P-G2,Yellow,7,Ambient Tank 2,Ambient Tank 2,Ambient,Day 5,Molecular
+2193,Pacuta,P-G2,Yellow,8,Ambient Tank 2,High Tank 2,High,Day 1,Molecular
+2086,Pacuta,P-G2,Yellow,9,Ambient Tank 2,High Tank 1,High,Day 1,Physiology
+2876,Pacuta,P-G2,Yellow,10,Ambient Tank 2,Ambient Tank 1,Ambient,Day 1,Molecular
+1602,Pacuta,P-G2,Yellow,11,Ambient Tank 2,Ambient Tank 2,Ambient,,
+2308,Pacuta,P-G2,Yellow,12,Ambient Tank 2,Ambient Tank 2,Ambient,Day 1,Physiology
+1728,Pacuta,P-G2,Yellow,13,Ambient Tank 2,Ambient Tank 1,Ambient,Day 3,Physiology 
+1120,Pacuta,P-G2,Yellow,14,Ambient Tank 2,Ambient Tank 1,Ambient,Day 5,Physiology
+1446,Pacuta,P-G2,Yellow,15,Ambient Tank 2,Ambient Tank 1,Ambient,Day 7,Molecular
+1563,Pacuta,P-G2,Yellow,16,Ambient Tank 2,High Tank 2,High,Day 3,Physiology 
+1438,Mcapitata,M-G3,Red,1,Ambient Tank 1,High Tank 1,High,Day 5,Physiology
+1322,Mcapitata,M-G3,Red,2,Ambient Tank 1,Ambient Tank 2,Ambient,Day 5,Physiology
+2368,Mcapitata,M-G3,Red,3,Ambient Tank 1,Ambient Tank 1,Ambient,Day 3,Molecular
+1771,Mcapitata,M-G3,Red,4,Ambient Tank 1,High Tank 1,High,Day 7,Molecular
+1764,Mcapitata,M-G3,Red,5,Ambient Tank 1,Ambient Tank 2,Ambient,Day 1,Molecular
+1620,Mcapitata,M-G3,Red,6,Ambient Tank 1,Ambient Tank 2,Ambient,Day 7,Molecular
+1130,Mcapitata,M-G3,Red,7,Ambient Tank 1,High Tank 2,High,Day 3,Physiology 
+1441,Mcapitata,M-G3,Red,8,Ambient Tank 1,Ambient Tank 2,Ambient,Day 3,Physiology 
+1180,Mcapitata,M-G3,Red,9,Ambient Tank 1,High Tank 1,High,Day 1,Physiology
+2983,Mcapitata,M-G3,Red,10,Ambient Tank 1,Ambient Tank 1,Ambient,Day 5,Molecular
+1429,Mcapitata,M-G3,Red,11,Ambient Tank 1,High Tank 2,High,Day 5,Molecular
+1123,Mcapitata,M-G3,Red,12,Ambient Tank 1,High Tank 2,High,Day 7,Physiology
+1133,Mcapitata,M-G3,Red,13,Ambient Tank 1,Ambient Tank 1,Ambient,Day 1,Physiology
+1223,Mcapitata,M-G3,Red,14,Ambient Tank 1,Ambient Tank 1,Ambient,Day 7,Physiology
+2531,Mcapitata,M-G3,Red,15,Ambient Tank 1,High Tank 2,High,Day 1,Molecular
+2402,Mcapitata,M-G3,Red,16,Ambient Tank 1,High Tank 1,High,Day 3,Molecular
+2389,Pacuta,P-G3,Dark Green,1,Ambient Tank 1,High Tank 2,High,Day 5,Physiology
+3003,Pacuta,P-G3,Dark Green,2,Ambient Tank 1,High Tank 1,High,Day 3,Physiology 
+2857,Pacuta,P-G3,Dark Green,3,Ambient Tank 1,High Tank 1,High,Day 5,Molecular
+1489,Pacuta,P-G3,Dark Green,4,Ambient Tank 1,Ambient Tank 1,Ambient,Day 7,Physiology
+1274,Pacuta,P-G3,Dark Green,5,Ambient Tank 1,High Tank 1,High,Day 1,Molecular
+1312,Pacuta,P-G3,Dark Green,6,Ambient Tank 1,Ambient Tank 1,Ambient,Day 5,Molecular
+2405,Pacuta,P-G3,Dark Green,7,Ambient Tank 1,Ambient Tank 2,Ambient,Day 7,Molecular
+1175,Pacuta,P-G3,Dark Green,8,Ambient Tank 1,Ambient Tank 2,Ambient,Day 3,Physiology 
+1209,Pacuta,P-G3,Dark Green,9,Ambient Tank 1,High Tank 2,High,Day 1,Physiology
+1536,Pacuta,P-G3,Dark Green,10,Ambient Tank 1,Ambient Tank 2,Ambient,Day 1,Molecular
+1437,Pacuta,P-G3,Dark Green,11,Ambient Tank 1,High Tank 2,High,Day 7,Molecular
+1701,Pacuta,P-G3,Dark Green,12,Ambient Tank 1,High Tank 2,High,Day 3,Molecular
+2537,Pacuta,P-G3,Dark Green,13,Ambient Tank 1,Ambient Tank 1,Ambient,Day 1,Physiology
+1149,Pacuta,P-G3,Dark Green,14,Ambient Tank 1,Ambient Tank 2,Ambient,Day 5,Physiology
+1488,Pacuta,P-G3,Dark Green,15,Ambient Tank 1,Ambient Tank 1,Ambient,Day 3,Molecular
+1597,Pacuta,P-G3,Dark Green,16,Ambient Tank 1,High Tank 1,High,Day 7,Physiology
+2300,Mcapitata,M-G4,Black,1,High Tank 1,Ambient Tank 1,Ambient,Day 5,Molecular
+2986,Mcapitata,M-G4,Black,2,High Tank 1,High Tank 1,High,Day 5,Physiology
+1589,Mcapitata,M-G4,Black,3,High Tank 1,High Tank 1,High,Day 3,Molecular
+1333,Mcapitata,M-G4,Black,4,High Tank 1,High Tank 1,High,Day 7,Molecular
+2865,Mcapitata,M-G4,Black,5,High Tank 1,Ambient Tank 1,Ambient,Day 3,Molecular
+1056,Mcapitata,M-G4,Black,6,High Tank 1,Ambient Tank 2,Ambient,Day 3,Physiology 
+1727,Mcapitata,M-G4,Black,7,High Tank 1,High Tank 1,High,Day 1,Physiology
+1566,Mcapitata,M-G4,Black,8,High Tank 1,High Tank 2,High,Day 5,Molecular
+1254,Mcapitata,M-G4,Black,9,High Tank 1,High Tank 2,High,,
+2416,Mcapitata,M-G4,Black,10,High Tank 1,High Tank 2,High,Day 7,Physiology
+2073,Mcapitata,M-G4,Black,11,High Tank 1,Ambient Tank 2,Ambient,Day 1,Molecular
+1431,Mcapitata,M-G4,Black,12,High Tank 1,Ambient Tank 2,Ambient,Day 7,Molecular
+1140,Mcapitata,M-G4,Black,13,High Tank 1,Ambient Tank 1,Ambient,Day 7,Physiology
+2659,Mcapitata,M-G4,Black,14,High Tank 1,Ambient Tank 2,Ambient,Day 5,Physiology
+2011,Mcapitata,M-G4,Black,15,High Tank 1,Ambient Tank 1,Ambient,Day 1,Physiology
+1731,Mcapitata,M-G4,Black,16,High Tank 1,High Tank 2,High,Day 3,Physiology 
+2869,Pacuta,P-G5,Green,1,High Tank 1,High Tank 2,High,Day 7,Molecular
+1285,Pacuta,P-G5,Green,2,High Tank 1,High Tank 1,High,Day 7,Physiology
+1234,Pacuta,P-G5,Green,3,High Tank 1,High Tank 1,High,Day 1,Molecular
+1757,Pacuta,P-G5,Green,4,High Tank 1,High Tank 1,High,Day 3,Physiology 
+1487,Pacuta,P-G5,Green,5,High Tank 1,High Tank 2,High,Day 3,Molecular
+1226,Pacuta,P-G5,Green,6,High Tank 1,Ambient Tank 1,Ambient,Day 1,Molecular
+1100,Pacuta,P-G5,Green,7,High Tank 1,Ambient Tank 2,Ambient,Day 1,Physiology
+1491,Pacuta,P-G5,Green,8,High Tank 1,Ambient Tank 1,Ambient,Day 5,Physiology
+1480,Pacuta,P-G5,Green,9,High Tank 1,Ambient Tank 2,Ambient,,
+1248,Pacuta,P-G5,Green,10,High Tank 1,Ambient Tank 2,Ambient,Day 5,Molecular
+1283,Pacuta,P-G5,Green,11,High Tank 1,Ambient Tank 1,Ambient,Day 7,Molecular
+1211,Pacuta,P-G5,Green,12,High Tank 1,Ambient Tank 2,Ambient,Day 3,Molecular
+1086,Pacuta,P-G5,Green,13,High Tank 1,Ambient Tank 1,Ambient,Day 3,Physiology 
+2200,Pacuta,P-G5,Green,14,High Tank 1,High Tank 2,High,Day 5,Physiology
+2203,Pacuta,P-G5,Green,15,High Tank 1,High Tank 2,High,Day 1,Physiology
+2018,Pacuta,P-G5,Green,16,High Tank 1,High Tank 1,High,Day 5,Molecular
+1131,Pacuta,P-G4,White,1,Ambient Tank 1,High Tank 2,High,Day 7,Physiology
+1128,Pacuta,P-G4,White,2,Ambient Tank 1,High Tank 2,High,,
+1547,Pacuta,P-G4,White,3,Ambient Tank 1,Ambient Tank 2,Ambient,Day 1,Molecular
+1244,Pacuta,P-G4,White,4,Ambient Tank 1,Ambient Tank 2,Ambient,Day 5,Physiology
+2297,Pacuta,P-G4,White,5,Ambient Tank 1,Ambient Tank 1,Ambient,Day 3,Molecular
+1177,Pacuta,P-G4,White,6,Ambient Tank 1,Ambient Tank 1,Ambient,Day 1,Physiology
+1217,Pacuta,P-G4,White,7,Ambient Tank 1,High Tank 1,High,Day 1,Physiology
+1820,Pacuta,P-G4,White,8,Ambient Tank 1,Ambient Tank 1,Ambient,Day 5,Molecular
+1538,Pacuta,P-G4,White,9,Ambient Tank 1,Ambient Tank 1,Ambient,Day 7,Physiology
+1444,Pacuta,P-G4,White,10,Ambient Tank 1,High Tank 1,High,Day 5,Physiology
+2013,Pacuta,P-G4,White,11,Ambient Tank 1,High Tank 2,High,Day 3,Physiology 
+1758,Pacuta,P-G4,White,12,Ambient Tank 1,High Tank 1,High,Day 3,Molecular
+1318,Pacuta,P-G4,White,13,Ambient Tank 1,High Tank 2,High,Day 5,Molecular
+1099,Pacuta,P-G4,White,14,Ambient Tank 1,Ambient Tank 2,Ambient,Day 7,Molecular
+1716,Pacuta,P-G4,White,15,Ambient Tank 1,High Tank 1,High,Day 7,Molecular
+1045,Pacuta,P-G4,White,16,Ambient Tank 1,Ambient Tank 2,Ambient,Day 3,Physiology 
+1718,Mcapitata,M-G5,Blue,1,High Tank 1,Ambient Tank 1,Ambient,Day 5,Physiology
+2666,Mcapitata,M-G5,Blue,2,High Tank 1,High Tank 2,High,Day 3,Molecular
+1705,Mcapitata,M-G5,Blue,3,High Tank 1,Ambient Tank 2,Ambient,Day 1,Physiology
+1300,Mcapitata,M-G5,Blue,4,High Tank 1,Ambient Tank 1,Ambient,Day 7,Molecular
+1166,Mcapitata,M-G5,Blue,5,High Tank 1,High Tank 2,High,Day 1,Physiology
+1628,Mcapitata,M-G5,Blue,6,High Tank 1,Ambient Tank 1,Ambient,Day 3,Physiology 
+1723,Mcapitata,M-G5,Blue,7,High Tank 1,Ambient Tank 2,Ambient,Day 3,Molecular
+1555,Mcapitata,M-G5,Blue,8,High Tank 1,High Tank 2,High,Day 7,Molecular
+1221,Mcapitata,M-G5,Blue,9,High Tank 1,High Tank 1,High,Day 1,Molecular
+1336,Mcapitata,M-G5,Blue,10,High Tank 1,High Tank 1,High,Day 3,Physiology 
+1039,Mcapitata,M-G5,Blue,11,High Tank 1,High Tank 2,High,Day 5,Physiology
+1653,Mcapitata,M-G5,Blue,12,High Tank 1,High Tank 1,High,Day 5,Molecular
+1281,Mcapitata,M-G5,Blue,13,High Tank 1,Ambient Tank 2,Ambient,Day 7,Physiology
+1176,Mcapitata,M-G5,Blue,14,High Tank 1,High Tank 1,High,Day 7,Physiology
+1046,Mcapitata,M-G5,Blue,15,High Tank 1,Ambient Tank 1,Ambient,Day 1,Molecular
+1067,Mcapitata,M-G5,Blue,16,High Tank 1,Ambient Tank 2,Ambient,Day 5,Molecular
+2002,Mcapitata,M-G1,Orange,1,Ambient Tank 2,High Tank 1,High,Day 3,Physiology 
+2853,Mcapitata,M-G1,Orange,2,Ambient Tank 2,Ambient Tank 1,Ambient,Day 3,Physiology 
+1749,Mcapitata,M-G1,Orange,3,Ambient Tank 2,High Tank 1,High,Day 5,Molecular
+1825,Mcapitata,M-G1,Orange,4,Ambient Tank 2,Ambient Tank 1,Ambient,Day 7,Molecular
+1206,Mcapitata,M-G1,Orange,5,Ambient Tank 2,Ambient Tank 1,Ambient,Day 5,Physiology
+1265,Mcapitata,M-G1,Orange,6,Ambient Tank 2,High Tank 1,High,Day 1,Molecular
+2026,Mcapitata,M-G1,Orange,7,Ambient Tank 2,High Tank 2,High,Day 3,Molecular
+1304,Mcapitata,M-G1,Orange,8,Ambient Tank 2,Ambient Tank 1,Ambient,Day 1,Molecular
+1774,Mcapitata,M-G1,Orange,9,Ambient Tank 2,High Tank 2,High,Day 1,Physiology
+2195,Mcapitata,M-G1,Orange,10,Ambient Tank 2,Ambient Tank 2,Ambient,Day 3,Molecular
+2668,Mcapitata,M-G1,Orange,11,Ambient Tank 2,High Tank 2,High,Day 5,DEAD (supposed to be for physiology)
+1291,Mcapitata,M-G1,Orange,12,Ambient Tank 2,High Tank 1,High,Day 7,Physiology
+1154,Mcapitata,M-G1,Orange,13,Ambient Tank 2,Ambient Tank 2,Ambient,Day 1,Physiology
+1581,Mcapitata,M-G1,Orange,14,Ambient Tank 2,High Tank 2,High,Day 7,Molecular
+1706,Mcapitata,M-G1,Orange,15,Ambient Tank 2,Ambient Tank 2,Ambient,Day 7,Physiology
+1494,Mcapitata,M-G1,Orange,16,Ambient Tank 2,Ambient Tank 2,Ambient,Day 5,Molecular

@@ -9,6 +9,8 @@ This script analyzes and plots PR data from adult acute thermal stress exposure 
 
 When I exported the data from Presens measurement software, I exported as excel. The excel format is not the correct one for this script but there is no option in the Presens software to export files as csv. I'm using the Putnam lab PC and it seems like I am the first person to be making measurements with the Presens software on this computer. Maybe need to update the software.
 
+The data may also be in %O2 instead of umol/L. 
+
 
 ## Load packages
 ```{r setup, include=FALSE}
@@ -33,73 +35,212 @@ library(gridExtra)
 library(ggpubr)
 library(lubridate)
 library(cowplot)
+library(hms)
 
 ## libraries for parallel processing
 library(future)
 library(furrr)
 ```
 
-## Import data
+
 ```{r}
-path.p <- "data/Physiology/PR-adult/raw" #the location of all your respirometry files 
 
-# List data files
-file.names <- list.files(path = path.p, pattern = "csv$")  # list all csv file names in the folder
-file.names <- file.names[!grepl("metadata", file.names)]   # omit metadata from files to be read in as data
+# Load the data
+sample.info <- read_csv(file = "../data/Physiology/PR-adult/PR_sample_metadata.csv")
+run.info <- read_csv(file = "../data/Physiology/PR-adult/PR_run_metadata.csv")
 
-# Load sample metadata (i.e., which corals were in which runs)
-sample.info <- read_csv(file = "data/Physiology/PR-adult/PR_sample_metadata.csv")
-# Load run metadata (i.e., light levels and interval times for each run)
-run.info <- read_csv(file = "data/Physiology/PR-adult/PR_run_metadata.csv")
+# Convert the Date columns to Date format
+sample.info <- sample.info %>%
+  mutate(Date = ymd(Date))
 
-# Join all coral and run metadata
-metadata <- full_join(sample.info, run.info) %>%
-  mutate(Date = as_date(as.character(Date), format = "%Y%m%d", tz = "HST"))
+run.info <- run.info %>%
+  mutate(Date = ymd(Date))
 
-# Select only certain columnns
+# Convert time columns in run.info to POSIXct by combining with Date
+run.info <- run.info %>%
+  mutate(Start.datetime = as.POSIXct(paste(Date, Start.time), format="%Y-%m-%d %H:%M"),
+         Stop.datetime = as.POSIXct(paste(Date, Stop.time), format="%Y-%m-%d %H:%M"))
+
+# Prepare the metadata by joining sample.info with run.info
+metadata <- run.info %>%
+  select(Run, Light_Level, Light_Value, Start.datetime, Stop.datetime) %>%
+  left_join(sample.info, by = "Run")
+
+# If necessary, remove duplicates or unwanted columns
 metadata <- metadata %>%
-  select(Date, 
-         colony_id, 
-         Run, 
-         Treatment, 
-         Chamber.Vol.L, 
-         Timepoint,
-         Start.time, 
-         Stop.time, 
-         Light_Value,
-         Surface.Area.cm2)
+  distinct()
 
-# Read in all data files
-df <- tibble(file.name = file.names) %>%
-  mutate(colony_id = gsub("_.*", "", file.name),                              # Get colony_id from filename
-          info = map(colony_id, ~filter(metadata, colony_id == .)),           # Get associated sample info
-         data0 = map(file.name, ~read_csv(file.path(path.p, .))))   # Get associated O2 data
-
-## need to break up date and time column for csv files!!!!!!!!!!!!!!!!!!
-
-
-
-
-
-
-
-
-# Select only Time, Value, and Temp columns from O2 data
-df <- df %>%
-  mutate(data0 = map(data0, ~select(., Date, Oxygen, Temperature)))   
+# Print the final metadata to check
+print(head(metadata))
 ```
 
-## Use the time breaks in the sample info to link O2 data with light levels
+Read in measurements and join with metadata 
 ```{r}
-df <- df %>%
-  mutate(intervals = map2(data0, info, function(.x, .y) {
-    split(.x, f = cut(as.numeric(.x$Date), breaks = as.numeric(c(.y$Start.time, last(.y$Stop.time))),
-                      labels = as.character(.y$Light_Value)))})) %>%
-  mutate(data = map(intervals, ~ unnest(tibble(.), .id = "Light_Value")))
-## 'data' now contains the O2 data with the corresponding light level as another column
-## Example of what 'data' for each sample looks like:
-df$data[[1]]
+process_sample <- function(file_path, metadata) {
+  # Extract the filename without the directory path
+  filename <- basename(file_path)
+  
+  # Extract colony_id and Run using regular expressions
+  colony_id <- str_extract(filename, "(BK[0-9]+|^[0-9]+)")  # Capture "BK<number>" or just numbers
+  run <- str_extract(filename, "(?<=_Run)[0-9]+")
+  
+  # Read the sample data
+  sample <- read.csv(file_path, header = TRUE) %>%
+    rename(DateTime = Date) %>%
+    select(DateTime, Oxygen, Temperature) %>%
+    mutate(
+      colony_id = colony_id,
+      Run = as.numeric(run)
+    )
+  
+  # Join with metadata
+  metadata_filtered <- metadata %>%
+    filter(colony_id == colony_id, Run == Run)
+  
+  sample %>%
+    left_join(metadata_filtered, by = c("colony_id", "Run"))
+}
+
+# List of sample files
+sample_files <- list.files(path = "../data/Physiology/PR-adult/raw/", pattern = "*.csv", full.names = TRUE)
+
+# Process all sample files and combine them into a single dataframe
+all_samples <- map_df(sample_files, process_sample, metadata = metadata)
+```
+
+Usually, Putnam lab usually thins data and fits regression to each sample. I am just going to group stuff and run models. 
+
+Obtain time intervals using stop and start times 
+```{r}
+all_samples <- all_samples %>%
+  mutate(
+    Start_datetime = ymd_hms(Start.datetime),
+    Stop_datetime = ymd_hms(Stop.datetime),
+    
+    # Calculate time interval in seconds
+    Time_interval_seconds = as.numeric(difftime(Stop_datetime, Start_datetime, units = "secs")),
+    Time_interval_mins = as.numeric(Time_interval_seconds / 60)
+  )
+```
+
+Correct for blanks
+```{r}
+# Identify blank samples and calculate average blank value
+# Filter out blank samples
+blanks <- all_samples %>%
+  filter(str_detect(colony_id, "^BK")) %>%
+  group_by(Run) %>%
+  summarize(blank_avg = mean(Oxygen, na.rm = TRUE))  # Adjust the Oxygen column if needed
+```
+
+I need to convert oxygen in % to umol/L, which is what we usually measure in. 
+```{r}
+# Constants
+P_atm <- 1  # atmospheric pressure in atm
+k_H <- 1.32e-3  # Henry's constant for O2 in mol/(L·atm)
+conversion_factor <- 1e6  # conversion factor from mol/L to µmol/L
+
+# Process data with blank correction
+all_samples_calc <- all_samples %>%
+  left_join(blanks, by = "Run") %>%
+  mutate(
+    # Correct for blanks
+    Oxygen_corrected = Oxygen - blank_avg,
+    
+    # Calculate partial pressure of O2
+    P_O2 = Oxygen_corrected / 100 * P_atm,  # Partial pressure of O2 in atm
+    
+    # Convert to µmol/L
+    Oxygen_umol_L = P_O2 * k_H * conversion_factor,  # Convert to µmol/L
+
+    # Calculate total oxygen consumption in µmol over the interval
+    Oxygen_consumption_umol_h = Oxygen_umol_L * Time_interval_seconds / 3600  # Total oxygen in µmol over the interval
+    
+    # Normalize by surface area (per cm² per hour)
+    #Oxygen_per_cm2_per_hour = Oxygen_consumption_umol_L / (Surface.Area.cm2 * Time_interval_seconds / 3600)
+  )
+```
+
+Look into units to make sure my math is correct 
+
+Avg oxygen values grouped by colony id, run and light level 
+```{r}
+summary <- all_samples_calc %>%
+  group_by(colony_id, Run, Light_Level) %>%
+  summarize(
+    Oxygen_mean = mean(Oxygen_consumption_umol_h, na.rm = TRUE),
+    Oxygen_sd = sd(Oxygen_consumption_umol_h, na.rm = TRUE),
+    .groups = 'drop'
+  )
+
+length(unique(summary$colony_id))
+```
+
+Join w/ sample list 
+```{r}
+# Read in sample list
+sample_list <- read.csv("../data/sample_list.csv", header = T) %>%
+  rename("colony_id" = "ID") %>%
+  mutate(colony_id = as.character(colony_id))
+  
+# Join dfs
+data_spp <- summary %>%
+  full_join(sample_list, by = "colony_id") %>%
+  filter(!is.na(Run)) %>% # remove any samples that were not processed for PR
+  filter(!str_detect(colony_id, "^BK")) %>%  # Remove rows where colony_id starts with "BK"
+  mutate(Category = case_when(
+    Light_Level == 0 ~ "Respiration",
+    Light_Level != 0 ~ "Photosynthesis",
+    TRUE ~ "Other"  # This handles any other cases, if there are any
+  ))
+```
+
+Separate by PR
+```{r}
+photo <- data_spp %>%
+  filter(Category == "Photosynthesis")
+
+resp <- data_spp %>% 
+  filter(Category == "Respiration")
+```
+
+Plot 
+```{r}
+ggplot(photo, aes(x = Timepoint.Sampled, y = Oxygen_mean, color = Treatment, shape = Species)) +
+  geom_point(size = 3) +  # For scatter plot, change to geom_line() for line plot
+  labs(
+    x = "Day",
+    y = "Oxygen Mean (µmol/L)",
+    color = "Treatment",
+    shape = "Species"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom"
+  )
+
+ggplot(resp, aes(x = Timepoint.Sampled, y = Oxygen_mean, color = Treatment, shape = Species)) +
+  geom_line(size = 3) +  # For scatter plot, change to geom_line() for line plot
+  labs(
+    x = "Day",
+    y = "Oxygen Mean (µmol/L)",
+    color = "Treatment",
+    shape = "Species"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom"
+  )
 ```
 
 
+```{r}
+anova_result <- aov(Oxygen_mean ~ Treatment * Timepoint.Sampled * Species, data = photo)
+summary(anova_result)
+
+anova_result <- aov(Oxygen_mean ~ Treatment * Timepoint.Sampled * Species, data = resp)
+summary(anova_result)
+```
+
+Still need to double check calculations/corrections and normalize by SA. 
 
